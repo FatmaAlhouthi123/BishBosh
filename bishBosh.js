@@ -1,15 +1,14 @@
-let bish = 3;
-let bash = 3;
-let bishBosh = 0;
+
 loopLength = 100;
 
 
 
 function loopFunction(loopLength = 100, bish = 3, bosh = 4, bishBosh = 0 ) {
     
+    
 
     let result = " ";
-    for (i = 1; i < loopLength; i++) {
+    for (i = 1; i <= loopLength; i++) {
 
         result += checkNumber(i, bish, bosh, bishBosh) + ", ";
     }
@@ -23,6 +22,7 @@ function loopFunction(loopLength = 100, bish = 3, bosh = 4, bishBosh = 0 ) {
 
 function checkNumber(inputNUmber, bish = 3, bosh = 4, bishBosh = 0) {
     console.log(bishBosh);
+    
     let result = "";
     if (bishBosh !== 0) {
         if (inputNUmber % bishBosh == 0) {
@@ -81,6 +81,7 @@ function userBishBoshInput() {
     console.log(bishBoshInput);
     let arrayLength1 = document.getElementById("ArrayLength").value;
     arrayLength1 = Number.parseInt(arrayLength1);
+    loopLength = arrayLength1;
     console.log(arrayLength1);
 
     
@@ -99,7 +100,21 @@ function addEventListener2() {
             document.getElementById("show").textContent = userBishBoshInput();
       else  document.getElementById("show").textContent = "Erorr"
         
-            
+      
+      let disapear = document.getElementById("disapear")
+      disapear.classList.remove("d-none");
+
+        disapear.textContent = "Loop numbers 1-";
+        var text = document.createTextNode(loopLength.toString());
+        disapear.appendChild(text);
+        
+
+
+
+
+
+
+
     });
 }
 
