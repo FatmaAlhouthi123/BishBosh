@@ -1,80 +1,116 @@
+let bish = 3;
+let bash = 3;
+let bishBosh = 0;
+loopLength = 100;
 
-function loopfuction() {
+
+
+function loopFunction(loopLength = 100, bish = 3, bosh = 4, bishBosh = 0 ) {
+    
+
     let result = " ";
-    for (i = 0; i < 100; i++) {
-    
-      
-        result += checkNumber(i) + ", ";
+    for (i = 1; i < loopLength; i++) {
+
+        result += checkNumber(i, bish, bosh, bishBosh) + ", ";
     }
-    document.getElementById("loop").textContent = result;
-   
     
+    return result;
 }
 
 
 
 
 
+function checkNumber(inputNUmber, bish = 3, bosh = 4, bishBosh = 0) {
+    console.log(bishBosh);
+    let result = "";
+    if (bishBosh !== 0) {
+        if (inputNUmber % bishBosh == 0) {
+            console.log(" im inside bishBoshInput");
+            return result = "BishBosh";
 
-function AddEventListner() {
-    
+        
 
-    const element2 = document.getElementById("button")
-    element2.addEventListener("click", function () {
-        
-        let input = checkInput();
-        result = checkNumber(input);
-        console.log(input);
-        
-        if (input = !null) {
-            console.log(result);
-        
         }
-        else AddEventListner("Error");
-        document.getElementById("demo").textContent = result;
+    } else {
+
+        if (inputNUmber % bish == 0 && inputNUmber % bosh == 0) 
+           return result = "BishBosh";
+         
+    }
+
+       if (inputNUmber % bosh == 0) 
+            result = "Bosh";
+           
+        
+
+        else if (inputNUmber % bish == 0) 
+            result = "Bish";
+            
+
+        
+        else 
+            result = inputNUmber.toString();
+           
+        
+        return result
+
+    }
+
+
+
+
+
+
+
+
+
+function userBishBoshInput() {
+
+    let bishInput = document.getElementById("bish").value;
+    bishInput = Number.parseInt(bishInput);
+    console.log(bishInput);
+    
+    let boshInput = document.getElementById("bosh").value;
+    boshInput = Number.parseInt(boshInput);
+    console.log(boshInput);
+
+
+    let bishBoshInput = document.getElementById("bishBosh").value;
+    bishBoshInput = Number.parseInt(bishBoshInput);
+    console.log(bishBoshInput);
+    let arrayLength1 = document.getElementById("ArrayLength").value;
+    arrayLength1 = Number.parseInt(arrayLength1);
+    console.log(arrayLength1);
+
+    
+    let resultshow = loopFunction(arrayLength1, bishInput, boshInput, bishBoshInput);
+    console.log(resultshow);
+    return resultshow;
+}
+ 
+
+function addEventListener2() {
+    const element3 = document.getElementById("button2");
+
+    element3.addEventListener("click", function () {
+
+        if  (userBishBoshInput()!== null)
+            document.getElementById("show").textContent = userBishBoshInput();
+      else  document.getElementById("show").textContent = "Erorr"
+        
+            
     });
-
-
-
 }
 
 
 
-function checkInput() {
-
-    let input = document.getElementById("inputedNo").value;
-    //  console.log(input.value);
-    input = Number.parseInt(input);
-    return input;
-}
 
 
-function checkNumber(inputNUmber) {
-    let arr = [];
-    let result;
-    if (inputNUmber % 4 == 0 && inputNUmber % 3 == 0) {
-        result = "BishBosh";
-        arr.push(result);
-    }
 
-    else if (inputNUmber % 4 == 0) {
-        result = "Bosh";
-        arr.push(result);
-    }
-
-    else if (inputNUmber % 3 == 0) {
-        result = "Bish";
-        arr.push(result);
-
-    }
-    else {
-        result = inputNUmber.toString();
-        arr.push(result);
-    }
-    return result
-
-}
+document.getElementById("loop").textContent = result = loopFunction();
+addEventListener2();
 
 
-loopfuction();
-AddEventListner();
+
+
