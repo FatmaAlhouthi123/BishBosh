@@ -1,4 +1,26 @@
+
+
+
+
+
+/*BishBosh */
+
+.changBackgroundColor{
+background-color: rgb(212, 161, 85); font-weight: bold;
+
+}
+
+
 label {
     width: 200px;
     display: inline-block;
+}
+
+
+/*shopingList */
+
+
+.bgStyle {
+
+    background-color: rgb(165, 116, 44); 
 }
