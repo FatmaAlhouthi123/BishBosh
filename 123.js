@@ -56,27 +56,24 @@ function AddCheckSymbol() {
 
 
 
-    let list = document.getElementById('myUL');
+    let list = document.getElementById('myUL').getElementsByTagName("li");
     console.log(list.length);
 
-    list.addEventListener('click', function () {
-        console.log("hellojj");
+    var j;
+    for (j = 0; j < list.length; j++) {
 
-        var j;
-        for (j = 0; j < list.length; j++) {
-           
-                list[j].classList.toggle('checked');
+        list[j].addEventListener('click', function () {
+                
+            this.classList.toggle('checked');
              
             
-        }
+        });
+    }
 
-                    
-                
-            
-        
+}     
 
-    });
-}
+   
+
 
 
 
