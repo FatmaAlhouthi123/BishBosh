@@ -90,7 +90,6 @@ function start() {
             
             
         });
-    createCloseButton();
-    AddCheckSymbol();
+   
 }
 start();
