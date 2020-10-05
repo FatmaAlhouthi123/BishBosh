@@ -60,11 +60,6 @@ function checkNumber(inputNUmber, bish = 3, bosh = 4, bishBosh = 0) {
 
 
 
-
-
-
-
-
 function userBishBoshInput() {
 
     let bishInput = document.getElementById("bish").value;
@@ -119,12 +114,9 @@ function addEventListener2() {
 }
 
 
-
-
-
-
 document.getElementById("loop").textContent = result = loopFunction();
 addEventListener2();
+
 
 
 
